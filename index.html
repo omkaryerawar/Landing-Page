@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style type="text/css">
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+          url("nbg.jpg");
+        background-size: cover;
+        font-family: sans-serif;
+      }
+
+      nav {
+        width: 100%;
+        height: 100px;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2em;
+        letter-spacing: 2px;
+      }
+      .menu a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        position: relative;
+      }
+
+      .menu a:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        border-bottom: 2px solid indianred;
+        transition: 0.4s linear;
+      }
+      .menu a:hover:before {
+        width: 90%;
+      }
+
+      .register a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        background: indianred;
+        border-radius: 8px;
+        transition: 0.4s;
+      }
+
+      .register a:hover {
+        background: transparent;
+        border: 1px solid indianred;
+      }
+
+      .h-txt {
+        max-width: 650px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+      }
+
+      .h-txt span {
+        letter-spacing: 5px;
+        font-size: 1.5em;
+      }
+
+      .h-txt h1 {
+        font-size: 3.5em;
+      }
+
+      .h-txt a {
+        text-decoration: none;
+        background: indianred;
+        color: white;
+        padding: 10px 20px;
+        letter-spacing: 5px;
+        transition: 0.4s;
+      }
+
+      .h-txt a:hover {
+        background: transparent;
+        border: 1px solid indianred;
+      }
+
+      /* Media Queries for responsiveness */
+      /* For devices with screen width less than or equal to 876px (tablets, smaller screens) */
+      @media (max-width: 876px) {
+        nav {
+          flex-direction: column;
+          height: auto;
+          padding: 10px;
+        }
+
+        .logo {
+          font-size: 1.8em; /* Reduced font size for logo */
+          text-align: center;
+        }
+
+        .menu {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: 10px 0;
+        }
+
+        .menu a {
+          padding: 8px 10px;
+          font-size: 16px; /* Reduce font size */
+        }
+
+        .register {
+          margin-top: 10px;
+        }
+
+        .register a {
+          font-size: 16px; /* Adjust font size */
+          padding: 8px 15px; /* Adjust padding to fit */
+        }
+
+        .h-txt h1 {
+          font-size: 2.5em;
+        }
+
+        .h-txt span {
+          font-size: 1.2em;
+        }
+
+        .h-txt a {
+          font-size: 18px;
+          letter-spacing: 3px;
+          padding: 8px 15px;
+        }
+      }
+
+      /* For devices with screen width less than or equal to 576px (smaller mobile devices) */
+      @media (max-width: 576px) {
+        nav {
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        .logo {
+          font-size: 1.5em;
+          text-align: center;
+        }
+
+        .menu {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .menu a {
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+
+        .register a {
+          font-size: 14px;
+          padding: 5px 10px;
+        }
+
+        .h-txt {
+          max-width: 100%;
+          top: 55%;
+        }
+
+        .h-txt h1 {
+          font-size: 2em;
+        }
+
+        .h-txt span {
+          font-size: 1em;
+        }
+
+        .h-txt a {
+          font-size: 16px;
+          padding: 8px 15px;
+        }
+      }
+
+      /* For small mobile devices (width less than or equal to 400px) */
+      @media (max-width: 400px) {
+        nav {
+          flex-direction: column;
+        }
+
+        .logo {
+          font-size: 1.4em;
+        }
+
+        .menu {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .menu a {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+
+        .register a {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+
+        .h-txt h1 {
+          font-size: 1.8em;
+        }
+
+        .h-txt span {
+          font-size: 0.9em;
+        }
+
+        .h-txt a {
+          font-size: 14px;
+          letter-spacing: 1px;
+          padding: 6px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Travel-X</div>
+        <div class="menu">
+          <a href="#">Home</a>
+          <a href="#">Hill Stations</a>
+          <a href="#">Best Offers</a>
+          <a href="#">Our Sites</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="register">
+          <a href="#">Register</a>
+        </div>
+      </nav>
+
+      <section class="h-txt">
+        <span>Enjoy</span>
+        <h1>International Travel Agency</h1>
+
+        <br />
+        <a href="#"> Book your Trip </a>
+      </section>
+    </header>
+  </body>
+</html>
